@@ -2,7 +2,7 @@
 # Необходимо вывести имена всех учеников из списка с новой строки
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+print(*names, sep = '\n')
 
 
 # Задание 2
@@ -12,7 +12,8 @@ names = ['Оля', 'Петя', 'Вася', 'Маша']
 # Петя: 4
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+for name in names:
+    print(f' {name}: {len(name)}')
 
 
 # Задание 3
@@ -25,7 +26,11 @@ is_male = {
     'Маша': False,
 }
 names = ['Оля', 'Петя', 'Вася', 'Маша']
-# ???
+for name in names:
+    if name in is_male and is_male[name] == False:
+        print(f'{name}: девочка')
+    else:
+        print(f'{name}: мальчик')
 
 
 # Задание 4
@@ -40,7 +45,12 @@ groups = [
     ['Вася', 'Маша', 'Саша', 'Женя'],
     ['Оля', 'Петя', 'Гриша'],
 ]
-# ???
+number_of_group = 0
+for group in groups:
+    number_of_group += 1
+    print(f'в группе {number_of_group}: {len(group)} ученика.')
+
+print(f'Всего {number_of_group} группы.')
 
 
 # Задание 5
@@ -54,4 +64,7 @@ groups = [
     ['Оля', 'Петя', 'Гриша'],
     ['Вася', 'Маша', 'Саша', 'Женя'],
 ]
-# ???
+number_of_group = 0
+for sckol_class in groups:
+    number_of_group += 1
+    print(f' Группа {number_of_group}: {sckol_class}')
