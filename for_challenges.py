@@ -67,4 +67,4 @@ groups = [
 number_of_group = 0
 for sckol_class in groups:
     number_of_group += 1
-    print(f' Группа {number_of_group}: {sckol_class}')
+    print(f' Группа {number_of_group}: {", ".join(sckol_class)}')

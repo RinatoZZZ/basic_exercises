@@ -87,7 +87,7 @@ for max_name in class_1:
     number_class += 1
     print(f'Самое частое имя в классе {number_class}: {max_names[0]}')
 
-
+print('--------------------------------')
 
 # Задание 4
 # Для каждого класса нужно вывести количество девочек и мальчиков в нём.
@@ -98,7 +98,7 @@ for max_name in class_1:
 school = [
     {'class': '2a', 'students': [{'first_name': 'Маша'}, {'first_name': 'Оля'}]},
     {'class': '2б', 'students': [{'first_name': 'Олег'}, {'first_name': 'Миша'}]},
-    {'class': '2в', 'students': [{'first_name': 'Даша'}, {'first_name': 'Олег'}, {'first_name': 'Маша'}]},
+    {'class': '2В', 'students': [{'first_name': 'Даша'}, {'first_name': 'Олег'}, {'first_name': 'Маша'}]},
 ]
 is_male = {
     'Олег': True,
@@ -107,9 +107,38 @@ is_male = {
     'Миша': True,
     'Даша': False,
 }
-gender_in_school = {}
 
-print(school['class'])
+dict_total_count = []
+
+for nm_class in school:
+    dict_1 = {}
+    dict_1['class'] = (list(nm_class.values())[0])
+    dict_1['count_boys'] = '0'
+    dict_1['count_girl'] = '0'
+    dict_total_count.append(dict_1)
+
+
+for school_class in school:
+    count_boys = 0
+    count_girl = 0
+    name_class = school_class['class']
+    for name in school_class['students']:
+        if is_male[name['first_name']] is True:
+            count_boys += 1
+        else:
+            count_girl += 1
+
+    for items in dict_total_count:
+        if items['class'] == name_class:
+            items['count_boys'] = count_boys
+            items['count_girl'] = count_girl
+        print(items)
+for items in dict_total_count:         
+    cls = items['class']
+    boys = items['count_boys']
+    girls = items['count_girl']
+    print(f'Класс {cls}:девочки {girls}, мальчики {boys} ')
+
 
 
 # Задание 5
